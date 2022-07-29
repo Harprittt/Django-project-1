@@ -6,8 +6,8 @@ from . import views
 
 urlpatterns = [
 
-path('sign/',views.signup,name='signup'),
-path('log/',views.logup,name='logup'),
+path('registration',views.signup,name='signup'),
+path('log',views.logup,name='logup'),
 
 
 

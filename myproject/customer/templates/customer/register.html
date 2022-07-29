@@ -28,8 +28,7 @@
 
         <div class="registration-form">
         	<h1>Registration form</h1>
-        	<form action="" method="POST">
-
+        	<form action="" enctype="multipart/form-data" method="POST"> 
         		{% csrf_token %}
 
         		<p>First Name</p>
@@ -47,15 +46,18 @@
       		    <p>Password</p>
       		    <input type="password" name="password" placeholder="Password"><br>
 
+      		    <p>upload image</p>
+      		    <input type="file" name="image" accept="image/png,image/jpeg" placeholder="upload from device"><br>
+
       		    <button type="submit">Submit</button>     		
       	    </form>
+
       	
         </div>
 
       	
 
 
-      		<button type="submit">upload</button>     		
-      	</form>
+      		     		
       	
     </div>
