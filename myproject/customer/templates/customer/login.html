@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8 ">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Django</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+	<div class="container">
+		<div class="navbar">
+			
+			<a href="{% url 'index' %}">Home</a>
+		    <a href="#">About</a>
+		    <a href="{% url 'signup' %}">Sign-in</a>
+		    <a href="#">Account</a>
+		    
+	    </div>
+
+
+
+
+	<!---------------registration form---------->
+
+
+
+
+        <div class="registration-form">
+        	<h1>Registration form</h1>
+        	<form action="" method="POST">
+
+        		{% csrf_token %}
+
+        		<p>First Name</p>
+      		    <input type="text" name="firstname" placeholder="Firstname">
+
+      		    <p>Last Name</p>
+      		    <input type="text" name="lastname" placeholder="Lastname">
+
+      		    <p>Email</p>
+      		    <input type="email" name="email" placeholder="Email">
+
+      		    <p>User Name</p>
+      		    <input type="text" name="username" placeholder="Username">
+
+      		    <p>Password</p>
+      		    <input type="password" name="password" placeholder="Password"><br>
+
+      		    <button type="submit">Submit</button>     		
+      	    </form>
+      	
+        </div>
+
+      	
+
+
+      		<button type="submit">upload</button>     		
+      	</form>
+      	
+    </div>
