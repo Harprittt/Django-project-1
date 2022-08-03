@@ -1,4 +1,5 @@
 {% load static %}
+{% get_media_prefix as MEDIA_URL %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,16 +28,18 @@
 
 
         <div class="registration-form">
-        	<h1>Registration form</h1>
-        	<form action="" enctype="multipart/form-data" method="POST"> 
+        	<h1>Modify account data</h1>
+        	<form action="" enctype="multipart/form-data" method=""> 
+        		
         		{% csrf_token %}
 
         		
 
-        		<p>First Name</p>
-      		    <input type="text" name="firstname" placeholder="Firstname" id="fname">
 
-      		    <p>Last Name</p>
+        		<p>First Name</p>
+      		    <input type="text" name="firstname" placeholder="Firstname" value="{{ obj.firstname }}">
+
+      		    <!-- <p>Last Name</p>
       		    <input type="text" name="lastname" placeholder="Lastname" id="lname">
 
       		    <p>Email</p>
@@ -49,15 +52,12 @@
       		    <input type="password" name="password" placeholder="Password" id="password"><br>
 
       		    <p>upload image</p>
-      		    <input type="file" name="image" accept="image/png,image/jpeg" placeholder="upload from device" id="image"><br>
+      		    <input type="file" name="image" accept="image/png,image/jpeg" placeholder="upload from device" id="image"><br> -->
 
       		    <button type="submit">Submit</button>     		
       	    </form>
-
-      	
-        </div>
-
-      	
+      	</div>
+        
 
 
       		     		

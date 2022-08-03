@@ -1,0 +1,135 @@
+{% load static %}
+{% get_media_prefix as MEDIA_URL %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8 ">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Django</title>
+</head>
+
+<style type="text/css">
+
+
+.container{
+
+	background-color: blanchedalmond;
+}
+
+
+.navbar{
+	display: inline-block;
+	height: 30px;
+	width: 100%;
+	background-color: black;
+	padding: 20px;
+	
+	
+}
+
+	
+
+.navbar a{
+    
+	color: white;
+    text-decoration: none;	 
+    padding: 30px;
+    font-size: 18px;
+    font: oblique;
+    width: 100px;
+    
+}
+
+.navbar:hover a{
+	background-color: yellowgreen;
+	transition: 0.5s;
+	padding: 20px;
+
+}
+
+
+
+.card-body h1{
+	font-size: 30px;
+	text-align: center;
+
+}
+
+
+
+
+.card-body h{
+	font-size: 20px;
+}
+
+
+.card-body a{
+	
+	
+	display: inline-block;
+	color: black;   
+    text-decoration: none;   
+    margin: 50px;
+    
+
+}
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+<body>
+	<div class="container">
+		<div class="navbar">
+			
+			<a href="{% url 'index' %}">Home</a>
+		    <a href="#">About</a>
+		    <a href="{% url 'signup' %}">Sign-in</a>
+		    <a href="{% url 'display_form' %}">Account</a>
+		</div>   
+	    	   
+	        
+	    
+  		    <div class="card-body">
+  			    <h1>Modify data</h1>
+  			    {% for data in obj %}
+    	            
+    	            <p class="card-text">	
+
+	      		    <ul>
+	      		    <li> Username: {{ data.username }}</li>
+
+	      		    <li>Firstname: {{ data.firstname }} </li>
+	   
+	                <li>Lastname: {{ data.lastname }} </li>
+
+	                <li>Email: {{ data.email }} </li>
+
+	                <img src="{% get_media_prefix %}{{ data.image }}" width="200">
+	   		        </ul>
+                    </p>
+
+    		        <a href="{% url 'edit' %}" class="btn">Edit</a>
+    		        <a href="#" class="btn">Delete</a>
+    		        <br/>
+    		    {% endfor %} 
+
+  		    </div>
+
+
+  		
+	</div>
+
+ 
+    
+
+</body>
+</html>
